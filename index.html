@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>舰娘私服 在线注册攻击 V1.0</title>
+<script src="http://dev.static.yingxiong.com/jntjyy/js/jquery-1.11.2.min.js"></script>
+<script src="./jnattc.js"></script>
+</head>
+<body style="color:#FFF" bgcolor=#333 align="center">
+
+<h1>舰娘私服 在线注册攻击 V1.0</h1>
+
+<p>食用方法:<br/>
+在下面的输入框中输入帐号和密码的生成规则和<br/>
+攻击间隔时间,然后点击 开始轰炸! 即可开始狂欢.<br/>
+</p>
+
+<p>规则:<br/>
+输入框内输入Javascript语句,可以new Date().getTime()来获取时间防止重复注册<br/>
+自带生成随机字母数字组合的函数rchar,使用rchar(长度)来生成指定长度的随机字符<br/>
+执行次数记录在变量i里.<br/>
+普通文本请用引号括起来,普通文本和函数的连接请用加号.<br/>
+例子:"ZuoSi"+i+"_"+rchar(5) 可能生成ZuoSi12_A5TY8<br/>
+</p>
+
+帐号规则:<input id="usrn" value='rchar(2)+i+"a"+rchar(15)'/><br/>
+密码规则:<input id="pswd" value='rchar(5)+i+rchar(2)'/><br/>
+攻击间隔:<input id="time" value="50"/>(毫秒,1000毫秒=1秒)<br/>
+<h6>如果机器渣请调高间隔!</h6>
+<span id="stat">尚未开始.</span><br/>
+<span id="last">最后信息:无</span><br/>
+<button id="btno" onclick="attstart()">开始轰炸!</button>
+</body>
